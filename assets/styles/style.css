@@ -1,0 +1,105 @@
+:root{
+    --primary-color: #aebac2;
+    --primary-bg-color: #0c7cbd;
+    --border-color: #000000;
+
+    --title-clor: #2F739B;
+    --link-color: #3F9DD4;
+    --icon-color: gray;
+    --text-color: rgb(0, 0, 0);
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    vertical-align: baseline;
+    list-style: none;
+}
+
+body{
+    background-color: var(--primary-bg-color);
+    color: white;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+a{
+    text-decoration: none;
+}
+
+i{
+    color: var(--icon-color);
+}
+
+.header{
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-between;
+    align-items: center;
+
+    padding: 0.5rem 1rem;
+    width: 100%;
+}
+
+.header__brand .brand__logo{
+    width: 3.25rem;
+    height: 3.25rem;
+}
+
+#toggleTheme{
+    font-size: 1.5rem;
+}
+
+.menu{
+    display: flex;
+    align-items: center;
+    background-color: var(--primary-color);
+}
+
+.menu__item{
+    width: 100%;
+}
+
+.menu--mobile{
+    width: 100vw;
+    position: fixed;
+    bottom: 0;
+    border-top: 1px solid var(--border-color);
+
+    justify-content: space-between;
+}
+
+.menu--mobile .menu__link{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    gap: 0.5rem;
+    padding: 0.5rem 1rem;
+}
+
+.menu__link.active .menu__icon, 
+.menu__link.active .menu__text{
+    color: white;
+    font-weight: 600;
+}
+
+.menu__icon, .menu__text{
+    color: var(--text-color);
+}
+
+.menu__icon{
+    font-size: 1.5rem;
+}
+
+.menu__text{
+    font-size: 0.75rem;
+    text-transform: uppercase;
+}
+
+@media (min-width: 768px){
+    .menu--mobile{
+        display: none;
+    }
+}
